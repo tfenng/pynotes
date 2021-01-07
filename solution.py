@@ -3,15 +3,15 @@
 # () * 4 = () ()
 # () * 8 = () ()
 
-class DigitSet(set):
+class DigitSet(object):
     def __init__(self, s):
         self.digits=s
 
-    def is_valid_row(self, x, times, y, z):
-        s = {x,times,y,z}
-        if len(s)<4:
+    def is_valid_row(self, x, y, z):
+        s = {x,y,z}
+        if len(s)<3:
             return False
-        return True if len(self.digits.intersection(s))==4 else False
+        return True if len(self.digits.intersection(s))==3 else False
 
     def is_answer(self, rows):
         l = []
@@ -31,7 +31,7 @@ if __name__ == '__main__':
     for times in [2,4,8]:
         for x in all_digits:
             y,z = plus_func(x,times)
-            if ds.is_valid_row(x, times, y, z):
+            if ds.is_valid_row(x, y, z):
                 #print('{} * {} = {}{}'.format(x, times, y, z))
                 candi_times[times].append(x)
     # seek answer
