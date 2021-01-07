@@ -15,8 +15,7 @@ class DigitSet(object):
 
     def is_answer(self, rows):
         l = []
-        for row in rows:
-            l.extend(row)
+        [l.extend(row) for row in rows]
         return True if len(set(l))==9 else False
 
 def plus_func(x, times):
