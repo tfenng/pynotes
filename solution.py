@@ -38,6 +38,8 @@ if __name__ == '__main__':
     for x0 in candi_times[2]:
         for x1 in candi_times[4]:
             for x2 in candi_times[8]:
+                if x0==x1 or x1==x2 or x0==x2:
+                    continue
                 y0, z0 = plus_func(x0,2)
                 y1, z1 = plus_func(x1, 4)
                 y2, z2 = plus_func(x2, 8)
