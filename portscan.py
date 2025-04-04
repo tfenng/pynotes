@@ -1,4 +1,5 @@
 import socket
+import sys
 from netaddr import iter_iprange
 
 def scan_ip_range(start_ip, end_ip, ports):
